@@ -24,10 +24,10 @@ with a suitable message, if it's not.
   (`Resource`, `Statement`, `PolicyDocument`, `PolicyName`),
 
 ## How to run
-- Download or clone the repository.<br/>
+- Download or clone the repository.<br/><br/>
+![download](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/3e19a456-f322-4cbe-bf67-6662b086c186)
 
 - Open the project in IntelliJ<br/><br/>
 ![open](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/8dabec3a-d636-48af-ab03-8c810427394d) <br/>
-
 - Open Main class and run the program<br/><br/>
 ![main](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/df6a7da3-0342-4c70-8cb7-3710519ae344) <br/>
