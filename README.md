@@ -26,9 +26,8 @@ with a suitable message, if it's not.
 ## How to run
 - Download or clone the repository.<br/>
 
-- Open the project in IntelliJ<br/>
-
-![open.png](..%2F..%2F..%2FPictures%2Fopen.png) <br/>
+- Open the project in IntelliJ<br/><br/>
+![open](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/8dabec3a-d636-48af-ab03-8c810427394d) <br/>
 
 - Open Main class and run the program<br/><br/>
-![main.png](..%2F..%2F..%2FPictures%2Fmain.png)<br/><br/>
+![main](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/df6a7da3-0342-4c70-8cb7-3710519ae344) <br/>
