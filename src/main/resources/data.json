@@ -1,0 +1,84 @@
+[
+  {
+    "PolicyName": "root",
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ListRoles",
+            "iam:ListUsers"
+          ],
+          "Resource": "*"
+        }
+      ]
+    }
+  },
+  {
+    "PolicyName": "root",
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ListRoles",
+            "iam:ListUsers"
+          ],
+          "Resource": "aws_iam_role_policy_attachment"
+        }
+      ]
+    }
+  },
+  {
+    "PolicyName": "root",
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ListRoles",
+            "iam:ListUsers"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "PolicyName": "root",
+    "PolicyDocument": {
+      "Version": "2012-10-17",
+      "Statement": [
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ListRoles",
+            "iam:ListUsers"
+          ],
+          "Resource": "aws_iam_role_policy_attachment"
+        },
+        {
+          "Sid": "IamListAccess",
+          "Effect": "Allow",
+          "Action": [
+            "iam:ListRoles",
+            "iam:ListUsers"
+          ],
+          "Resource": "*"
+        }
+      ]
+    }
+  },
+  {
+    "PolicyName": "root",
+    "PolicyDocument": {
+      "Version": "2012-10-17"
+    }
+  }
+]
