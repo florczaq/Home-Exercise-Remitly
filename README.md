@@ -14,7 +14,7 @@ In `main` function, I presented an example of how to use `resourceDoesNotContain
 
 - The program reads an array of json objects from file `data.json`. 
 
-- Validates if json format is `AWS::IAM:Role Policy` and throws `RuntimeException` 
+- Validates if json format is `AWS::IAM:Role Policy` and throws `JSONFormatException` 
 with a suitable message, if it's not.
 
 - Prints message describing every json object in `data.json`. 

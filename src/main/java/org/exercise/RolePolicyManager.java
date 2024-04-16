@@ -60,9 +60,9 @@ public class RolePolicyManager {
     }
 
     /**
-     * Methods throws RuntimeException if JSON format is different from AWS::IAM::Role Policy
-     *
+     * Methods throws JSONFormatException if JSON format is different from AWS::IAM::Role Policy
      * @param rolePolicy
+     * @throws JSONFormatException
      */
     public static void validateJSONFormat(JSONObject rolePolicy) throws JSONFormatException {
         try {
