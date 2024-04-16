@@ -1,6 +1,7 @@
 package org.exercise;
 
 
+import org.exercise.exception.JSONFormatException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 
@@ -56,18 +57,18 @@ public class RolePolicyManager {
     }
 
     /**
-     * Methods throws RuntimeException if JSON format is different than AWS::IAM::Role Policy
+     * Methods throws RuntimeException if JSON format is different from AWS::IAM::Role Policy
      *
      * @param rolePolicy
      */
-    public static void validateJSONFormat(JSONObject rolePolicy) throws RuntimeException {
+    public static void validateJSONFormat(JSONObject rolePolicy) throws JSONFormatException {
         try {
             JSONObject policyDocument = getPolicyDocument(rolePolicy);
             String policyName = getPolicyName(rolePolicy);
             JSONArray statement = getStatement(policyDocument);
             String resource = getResource((JSONObject) statement.get(0));
         } catch (NoSuchObjectException e) {
-            throw new RuntimeException(String.format("Wrong json format: %s", e.getMessage()));
+            throw new JSONFormatException(e.getMessage());
         }
     }
 

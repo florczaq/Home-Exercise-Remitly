@@ -1,5 +1,6 @@
 package org.exercise;
 
+import org.exercise.exception.JSONFormatException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -7,6 +8,7 @@ import org.json.simple.parser.ParseException;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.rmi.NoSuchObjectException;
 
 import static org.exercise.Solution.readJSONFromFile;
 import static org.exercise.Solution.resourceDoesNotContainsSingleAsterisk;
@@ -39,6 +41,7 @@ public class Main {
         }
 
         if (jsonArray == null) return;
+
         int i = 0;
         for (Object o : jsonArray) {
             try {
@@ -46,7 +49,7 @@ public class Main {
                     ? "Not single asterisk."
                     : "Single asterisk"
                 );
-            } catch (RuntimeException e) {
+            } catch (JSONFormatException | NoSuchObjectException e) {
                 System.err.printf("%s) %s%n", i, e.getMessage());
             }
             i++;

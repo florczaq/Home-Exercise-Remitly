@@ -1,5 +1,6 @@
 package org.exercise;
 
+import org.exercise.exception.JSONFormatException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -20,13 +21,10 @@ public class Solution {
      * @return true if at least one of resources contains single asterisk
      * @throws NoSuchObjectException
      */
-    public static boolean resourceDoesNotContainsSingleAsterisk(JSONObject rolePolicy) throws RuntimeException {
-        try {
-
+    public static boolean resourceDoesNotContainsSingleAsterisk(JSONObject rolePolicy) throws JSONFormatException, NoSuchObjectException {
             RolePolicyManager.validateJSONFormat(rolePolicy);
 
             JSONObject policyDocument = RolePolicyManager.getPolicyDocument(rolePolicy);
-            String policyName = RolePolicyManager.getPolicyName(rolePolicy);
             JSONArray statement = RolePolicyManager.getStatement(policyDocument);
 
             boolean containsSingleAsterisk = false;
@@ -36,9 +34,7 @@ public class Solution {
                     containsSingleAsterisk = true;
 
             return !containsSingleAsterisk;
-        } catch (NoSuchObjectException | RuntimeException e) {
-            throw new RuntimeException(e.getMessage());
-        }
+
     }
 
     /**

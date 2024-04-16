@@ -1,6 +1,7 @@
 package org.exercise;
 
 
+import org.exercise.exception.JSONFormatException;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,7 +14,7 @@ import java.rmi.NoSuchObjectException;
 public class RolePolicyManagerTest {
 
     @Test
-    public void JSONContainsSingleAsterisk() throws NoSuchObjectException, ParseException {
+    public void JSONContainsSingleAsterisk() throws ParseException, JSONFormatException, NoSuchObjectException {
         JSONObject jsonObject = (JSONObject) new JSONParser().parse("""
             {
                 "PolicyName": "root",
@@ -38,7 +39,7 @@ public class RolePolicyManagerTest {
     }
 
     @Test
-    public void JSONDoesNotContainsSingleAsterisk() throws ParseException, NoSuchObjectException {
+    public void JSONDoesNotContainsSingleAsterisk() throws ParseException, JSONFormatException, NoSuchObjectException {
         JSONObject jsonObject = (JSONObject) new JSONParser().parse("""
             {
                 "PolicyName": "root",
@@ -171,6 +172,6 @@ public class RolePolicyManagerTest {
                 }
             }
             """);
-        Assertions.assertThrows(RuntimeException.class, ()->RolePolicyManager.validateJSONFormat(jsonObject));
+        Assertions.assertThrows(JSONFormatException.class, () -> RolePolicyManager.validateJSONFormat(jsonObject));
     }
 }
