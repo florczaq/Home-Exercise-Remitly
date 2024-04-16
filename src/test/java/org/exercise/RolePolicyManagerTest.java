@@ -174,4 +174,37 @@ public class RolePolicyManagerTest {
             """);
         Assertions.assertThrows(JSONFormatException.class, () -> RolePolicyManager.validateJSONFormat(jsonObject));
     }
+
+    @Test
+    public void throwEmptyResource() throws ParseException, NoSuchObjectException {
+        JSONObject jsonObject = (JSONObject) new JSONParser().parse("""
+            {
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Sid": "IamListAccess",
+                            "Effect": "Allow",
+                            "Action": [
+                                "iam:ListRoles",
+                                "iam:ListUsers"
+                            ],
+                            "Resource": ""
+                        }
+                    ]
+                }
+            }
+            """);
+        JSONObject policyDocument = RolePolicyManager.getPolicyDocument(jsonObject);
+        JSONArray statement = RolePolicyManager.getStatement(policyDocument);
+        Exception exception = Assertions.assertThrows(
+            NoSuchObjectException.class,
+            () -> RolePolicyManager.getResource((JSONObject) statement.get(0))
+        );
+
+        String expectedMessage = "Resource is empty";
+        String actualMessage = exception.getMessage();
+
+        Assertions.assertTrue(actualMessage.contains(expectedMessage));
+    }
 }

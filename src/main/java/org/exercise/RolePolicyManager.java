@@ -53,6 +53,9 @@ public class RolePolicyManager {
     public static String getResource(JSONObject statementElement) throws NoSuchObjectException {
         if (!statementElement.containsKey("Resource"))
             throw new NoSuchObjectException("Resource not found");
+
+        if (statementElement.get("Resource").toString().trim().equals(""))
+            throw new NoSuchObjectException("Resource is empty");
         return statementElement.get("Resource").toString();
     }
 
