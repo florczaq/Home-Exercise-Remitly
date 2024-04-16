@@ -7,10 +7,10 @@ for summer internship as Java Developer for Remitly Poland. <br/>
 
 Method `resourceDoesNotContainsSingleAsterisk` checks value of `Resource` field
 and returns logical true if the value is different from `*`.
-If there are more than one element in `Statement` array method will return logical
-false if at least one `Resource` field contains `*`.
+If there is more than one element in `Statement` array method will return logical
+false as long as at least one `Resource` field contains `*`.
 
-In `main` function I presented example use of `resourceDoesNotContainsSingleAsterisk` method:
+In `main` function, I presented an example of how to use `resourceDoesNotContainsSingleAsterisk` method:
 
 - The program reads an array of json objects from file `data.json`. 
 
@@ -25,8 +25,7 @@ with a suitable message, if it's not.
 
 ## How to run
 - Download or clone the repository.<br/><br/>
-![download](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/3e19a456-f322-4cbe-bf67-6662b086c186)
-
+![download](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/3e19a456-f322-4cbe-bf67-6662b086c186)<br/>
 - Open the project in IntelliJ<br/><br/>
 ![open](https://github.com/florczaq/Home-Exercise-Remitly/assets/84631301/8dabec3a-d636-48af-ab03-8c810427394d) <br/>
 - Open Main class and run the program<br/><br/>
