@@ -8,7 +8,7 @@ for summer internship as Java Developer for Remitly Poland. <br/>
 Method `resourceDoesNotContainsSingleAsterisk` checks value of `Resource` field
 and returns logical true if the value is different from `*`.
 If there is more than one element in `Statement` array method will return logical
-false as long as at least one `Resource` field contains `*`.
+false as long as at least one `Resource` field is `*`.
 
 In `main` function, I presented an example of how to use `resourceDoesNotContainsSingleAsterisk` method:
 
