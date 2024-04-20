@@ -12,13 +12,12 @@ import java.rmi.NoSuchObjectException;
 
 /**
  * Home exercise for the first stage of recruitment for Java Software Developer Internship in Remitly Poland.
- *
  * @author Mikołaj Florczak
  */
 public class Solution {
     /**
      * @param rolePolicy AWS::IAM::Role Policy json object
-     * @return true if at least one of resources contains single asterisk
+     * @return false if at least one of resources contains single asterisk
      * @throws NoSuchObjectException
      */
     public static boolean resourceDoesNotContainsSingleAsterisk(JSONObject rolePolicy) throws JSONFormatException, NoSuchObjectException {
@@ -39,7 +38,7 @@ public class Solution {
 
     /**
      * @param path path to a json file
-     * @return Object which either JSONObject or JSONArray, depending on file content
+     * @return Object which is either JSONObject or JSONArray, depending on file content
      * @throws ParseException
      * @throws IOException
      */
